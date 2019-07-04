@@ -19,9 +19,9 @@ public class AlarmWakeup extends Activity
 		PendingIntent pi = PendingIntent.getActivity(getApplicationContext(),3333,i, PendingIntent.FLAG_CANCEL_CURRENT);
         
 		Calendar cal = Calendar.getInstance();
-		cal.add(Calendar.SECOND, 10);
-		cal.add(Calendar.MINUTE, 0);
-		cal.add(Calendar.HOUR, 0);
+		cal.add(Calendar.SECOND, 0);
+		cal.add(Calendar.MINUTE, 30);
+		cal.add(Calendar.HOUR, 1);
 		AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
 		am.set(AlarmManager.RTC_WAKEUP,cal.getTimeInMillis(), pi);
 	}
