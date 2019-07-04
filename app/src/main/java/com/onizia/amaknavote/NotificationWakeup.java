@@ -2,17 +2,8 @@ package com.onizia.amaknavote;
 
 import android.app.*;
 import android.os.*;
-import android.webkit.*;
-import android.widget.*;
-import java.net.*;
 import android.view.*;
-import android.content.SharedPreferences;
-import android.preference.*;
-import java.util.prefs.*;
-import android.content.Intent;
 import java.util.*;
-import android.util.*;
-import android.content.*;
 import android.support.v4.app.*;
 
 public class NotificationWakeup extends Activity
@@ -27,9 +18,6 @@ public class NotificationWakeup extends Activity
 		
         createNotificationChannel();
 		showNotification(view);
-		
-		//Intent I_MainActivity = new Intent().setClass(this, MainActivity.class);
-		//startActivity(I_MainActivity);
 		
 		this.finish();
     }

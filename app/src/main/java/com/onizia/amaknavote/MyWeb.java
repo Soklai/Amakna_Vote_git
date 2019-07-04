@@ -4,18 +4,10 @@ import android.app.*;
 import android.os.*;
 import android.webkit.*;
 import android.widget.*;
-import java.net.*;
 import android.graphics.*;
 import android.view.*;
 import android.widget.AdapterView.*;
-import android.preference.*;
-import java.util.*;
-import java.net.*;
-import java.io.*;
-import android.util.*;
 import android.content.*;
-import android.support.v4.app.*;
-import org.apache.http.util.*;
 
 public class MyWeb extends Activity implements OnClickListener
 {
@@ -27,7 +19,6 @@ public class MyWeb extends Activity implements OnClickListener
 	private String urlPriveNet = ("https://serveur-prive.net/dofus/amakna-1-29-le-leader-des-serveurs-prive-dofus-1000-co-1530/vote");
 	private String NomDeCompte;
 	private String MotDePasse;
-	//public String output;
 	
 	private int VoteFinish = 0;
 	
@@ -106,12 +97,8 @@ public class MyWeb extends Activity implements OnClickListener
 						view.loadUrl( "javascript:var SUPR4 = document.getElementById('nav').remove();");
 						view.loadUrl( "javascript:var SUPR5 = document.getElementById('breadcrumb').remove();");
 						view.loadUrl( "javascript:var SUPR6 = document.getElementById('choix').remove();");
-						//view.loadUrl( "javascript:var SUPR = document.getElementById('page').remove();");
-						//view.loadUrl( "javascript:var SUPR = document.getElementById('sensi').remove();");
 						/* Pub Video */ view.loadUrl( "javascript:var SUPR8 = document.getElementById('gauche').remove();");
-						/* Bloc Capatcha + information */ //view.loadUrl( "javascript:var SUPR = document.getElementById('page').remove();");
 						/* Zone bleue*/ view.loadUrl( "javascript:var SUPR9 = document.getElementById('inform').remove();");
-					    /* Boutton vote */ //view.loadUrl( "javascript:var SUPR = document.getElementById('votebtn').remove();");
 						/* Zone noir infos */ view.loadUrl( "javascript:var MDP1 = document.getElementById('informations').remove();");
 					    view.loadUrl( "javascript:var MDP2 = document.getElementsById('description').remove();");
 					} 
@@ -174,36 +161,4 @@ public class MyWeb extends Activity implements OnClickListener
 	  
    }
    
-	/* private class BackTask extends AsyncTask<String, Integer, String> {
-		@Override
-		protected void onPreExecute() {}
-
-		protected String doInBackground(String... address) {
-			String output = "";
-			try {
-				java.net.URL url = new java.net.URL(address[0]);
-				java.io.BufferedReader in = new java.io.BufferedReader(new java.io.InputStreamReader(url.openStream()));
-				String line;
-				while ((line = in.readLine()) != null) {
-					output += line;
-				}
-				in.close(); } catch (java.net.MalformedURLException e) {
-				output = e.getMessage();
-			} catch (java.io.IOException e) {
-				output = e.getMessage();
-			} catch (Exception e) {
-				output = e.toString();
-			}
-			return output;
-		}
-
-		protected void onProgressUpdate(Integer... values) {}
-
-		protected void onPostExecute(String s)
-		{
-			//TextView1.setText(s);
-			TextView1.setText(s.substring(0, 400));
-			
-		}
-	} */
 } 

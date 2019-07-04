@@ -4,15 +4,9 @@ import android.app.*;
 import android.os.*;
 import android.webkit.*;
 import android.widget.*;
-import java.net.*;
-import android.graphics.*;
 import android.view.*;
 import android.widget.AdapterView.*;
-import android.preference.*;
-import java.util.*;
-import android.util.*;
 import android.content.*;
-import android.support.v4.app.*;
 
 public class MainActivity extends Activity implements OnClickListener
 {
@@ -31,16 +25,13 @@ public class MainActivity extends Activity implements OnClickListener
 	public View view;
 	public WebView ViewWeb;
 	
-	public String url;
-	public String urlRedi = ("http://www.amakna.net/");
-	
 	public String NomDeCompte;
 	public String MotDePasse;
+	
 	private boolean compteErg;
 	private boolean resetCompte;
 	
-	public static final String PREFS_GAME = "com.onizia.amaknavote";
-	public static final String GAME_SCORE = "GameScore" ;   
+	public static final String PREFS_SHARED = "";
     
     @Override    
     protected void onCreate(Bundle savedInstanceState)
@@ -104,7 +95,7 @@ public class MainActivity extends Activity implements OnClickListener
    
     public void saveData()
     { 
-		  SharedPreferences sp = getSharedPreferences ( PREFS_GAME , Context . MODE_PRIVATE ); 
+		  SharedPreferences sp = getSharedPreferences ( PREFS_SHARED , Context . MODE_PRIVATE ); 
 		  
 		  sp.edit().putBoolean("K_compteErg", compteErg).commit();
 		  sp.edit().putString("K_Ndc", NomDeCompte).commit();
@@ -113,7 +104,7 @@ public class MainActivity extends Activity implements OnClickListener
    
     public void loadData()
     {
-       SharedPreferences sp = getSharedPreferences ( PREFS_GAME , Context . MODE_PRIVATE );
+       SharedPreferences sp = getSharedPreferences ( PREFS_SHARED, Context . MODE_PRIVATE );
 	   compteErg = sp.getBoolean("K_compteErg", false);
        NomDeCompte = sp.getString("K_Ndc", "null");
 	   MotDePasse = sp.getString("K_Mdp", "null"); 
